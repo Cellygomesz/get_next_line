@@ -6,8 +6,13 @@
 /*   By: mgomes-s <mgomes-s@42.rio>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:43 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/21 11:30:05 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:23:38 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
+char	*get_next_line(int fd);
+
+#endif
