@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgomes-s <mgomes-s@42.rio>                 +#+  +:+       +#+        */
+/*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:43 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/22 13:43:09 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/22 13:50:21 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # ifndef BUFFER_SIZE
 # define BUFER_SIZE 10
 # endif
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
 
 typedef struct s_list
 {
