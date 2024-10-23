@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:43 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/22 21:41:41 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/23 09:59:18 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-# define BUFER_SIZE 10
+#  define BUFER_SIZE 42
 # endif
 
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
 
 char	*get_next_line(int fd);
