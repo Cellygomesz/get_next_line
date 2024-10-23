@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:43 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/22 13:50:21 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/22 21:41:41 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
-typedef struct s_list
-{
-	char			*str_buf;
-	struct s_list	*next;
-} t_list;
-
 char	*get_next_line(int fd);
+size_t  ft_strlen(const char *str);
+char    ft_strchr(char *str, int c);
+char    *ft_substr(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(char const *s1, char const *s2);
+char    *ft_strdup(const char *s);
 
 #endif
