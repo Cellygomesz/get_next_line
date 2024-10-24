@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:24:28 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/23 11:53:37 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/24 17:28:09 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,38 @@ int main(void)
 	str = get_next_line(fd);
 	printf("%s\n", str);
 	return (0);
+}
+// ----------------------------------
+
+char	*get_next_line(int fd)
+{
+	static char	*keep = NULL;
+	char		*tmp;
+	char		*line;
+
+	tmp = NULL;
+	line = NULL;
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	lineread(fd, &keep, &tmp);
+	if (keep != NULL && *keep != '\0')
+		line = lineparse(&keep, &tmp);
+	if (!line || *line == '\0')
+	{
+		my_free(&keep, &line, &tmp);
+		return (NULL);
+	}
+	return (line):
+}
+
+char	*lineparse(char **keep, char **tmp)
+{
+	char	*line;
+
+	*tmp = ft_strdup(*keep);
+	my_free(keep, 0, 0);
+	*keep = after_newline(*tmp);
+	line = before_newline(*tmp);
+	my_free(tmp, 0, 0);
+	return (line);
 }
