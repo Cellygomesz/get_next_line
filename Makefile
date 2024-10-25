@@ -6,19 +6,19 @@
 #    By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/12 11:48:16 by mgomes-s          #+#    #+#              #
-#    Updated: 2024/10/21 11:24:01 by mgomes-s         ###   ########.fr        #
+#    Updated: 2024/10/25 10:44:46 by mgomes-s         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = get_next_line.a
 
-SRC = get_next_line_utils.c get_next_line.c
+SRC = get_next_line_utils.c get_next_line.c 
 
 OBJ = $(SRC:.c=.o)
 
 CC = cc
 
-CC_FLAGS = -Wall -Wextra -Werror
+CC_FLAGS = -Wall -Wextra -Werror -g
 
 GREEN = \033[0;32m
 RESET = \033[0m

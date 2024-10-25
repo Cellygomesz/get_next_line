@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@42.rio>                 +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:03 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/24 17:04:42 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/25 10:40:56 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	found_newline(const char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (s[i] == '\n')
-			return (0);
+		if (str[i] == '\n')
+			return (1);
 		i++;
 	}
 	return (0);
@@ -28,70 +28,50 @@ int	found_newline(const char *str)
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	char	*s;
+	char	*result;
 	int		len;
+	int		len2;
 	int		i;
 
+	len2 = 0;
 	len = 0;
-	i = 0;
-	if (!s1 && !s2)
-		return (NULL);
-	while (s2 && s2[len])
+	while (s1 && s1[len])
 		len++;
-	while (s2 && s2[i])
-		i++;
-	s = ft_bzero(len + i + 1, sizeof * s);
-	if (!s)
+	while (s2 && s2[len2])
+		len2++;
+	result = (char *)malloc(len + len2 + 1);
+	if (!result)
 		return (NULL);
-	len = -1;
-	while (s1 && s1[++len])
-		s[len] = s1[len];
 	i = -1;
-	while (s2 && s2[++i])
-		s[len + i] = s2[i];
-	return (s);
+	while (++i < len)
+		result[i] = s1[i];
+	i = -1;
+	while (++i < len2)
+		result[len + i] = s2[i];
+	result[len + len2] = '\0';
+	return (result);
 }
 
 char	*ft_strdup(const char *s1)
 {
-	char	*s2;
+	char	*dup;
+	int		len;
 	int		i;
 
-	i = 0;
-	if (!s1)
-		return (ft_strdup(""));
-	while (s1[i])
-		i++;
-	s2 = ft_bzero(i + 1, sizeof * s2);
-	if (!s2)
+	len = 0;
+	while (s1 && s1[len])
+		len++;
+	dup = (char *)malloc((len + 1) * sizeof(char));
+	if (!dup)
 		return (NULL);
 	i = 0;
-	while (s1[i])
+	while (i < len)
 	{
-		s2[i] = s1[i];
+		dup[i] = s1[i];
 		i++;
 	}
-	return (s2);
-}
-
-void	*ft_bzero(size_t count, size_t size)
-{
-	void			*r;
-	unsigned char	*p;
-	size_t			allsize;
-
-	allsize = count * size;
-	r = malloc(allsize);
-	if (!r)
-		return (NULL);
-	p = (unsigned char *)r;
-	while (allsize != 0)
-	{
-		*p = '\0';
-		p++;
-		allsize--;
-	}
-	return (r);
+	dup[i] = '\0';
+	return (dup);
 }
 
 void	my_free(char **str, char **str2, char **str3)
