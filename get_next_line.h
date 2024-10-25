@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:29:43 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/25 10:40:25 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/25 10:54:27 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 #  define BUFFER_SIZE 42
 # endif
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 char	*get_next_line(int fd);
 char	*lineparse(char **keep, char **tmp);
