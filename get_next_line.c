@@ -6,7 +6,7 @@
 /*   By: mgomes-s <mgomes-s@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 11:24:28 by mgomes-s          #+#    #+#             */
-/*   Updated: 2024/10/25 10:36:50 by mgomes-s         ###   ########.fr       */
+/*   Updated: 2024/10/25 19:42:34 by mgomes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*lineparse(char **keep, char **tmp)
 	my_free(keep, NULL, NULL);
 	*keep = after_newline(*tmp);
 	line = before_newline(*tmp);
-	my_free(tmp, NULL, NULL);
+	my_free(tmp, keep, NULL);
 	return (line);
 }
 
